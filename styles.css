@@ -1,0 +1,263 @@
+/* ============================================================
+   Kimi Code Tool Hub — Clay 风格设计系统（源自 DESIGN.md）
+   ============================================================ */
+
+/* ---------- 设计 Tokens ---------- */
+:root {
+  /* 品牌色 */
+  --primary: #0a0a0a;
+  --brand-pink: #ff4d8b;
+  --brand-teal: #1a3a3a;
+  --brand-lavender: #b8a4ed;
+  --brand-peach: #ffb084;
+  --brand-ochre: #e8b94a;
+  --brand-mint: #a4d4c5;
+  --brand-coral: #ff6b5a;
+
+  /* 表面 */
+  --canvas: #fffaf0;
+  --surface-soft: #faf5e8;
+  --surface-card: #f5f0e0;
+  --surface-strong: #ebe6d6;
+  --hairline: #e5e5e5;
+
+  /* 文字 */
+  --ink: #0a0a0a;
+  --body-strong: #1a1a1a;
+  --body: #3a3a3a;
+  --muted: #6a6a6a;
+  --muted-soft: #9a9a9a;
+  --on-primary: #ffffff;
+
+  /* 圆角 */
+  --rounded-xs: 6px;
+  --rounded-sm: 8px;
+  --rounded-md: 12px;
+  --rounded-lg: 16px;
+  --rounded-xl: 24px;
+  --rounded-pill: 9999px;
+
+  /* 间距 */
+  --sp-xs: 8px;
+  --sp-sm: 12px;
+  --sp-md: 16px;
+  --sp-lg: 24px;
+  --sp-xl: 32px;
+  --sp-xxl: 48px;
+  --sp-section: 96px;
+
+  --font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- 基础 ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--canvas);
+  color: var(--body);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ink); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 var(--sp-lg); }
+
+/* ---------- 字体层级（Plain Black 缺席，用 Inter 500 + 负字距替代） ---------- */
+.display-xl { font-size: 72px; font-weight: 500; line-height: 1.0; letter-spacing: -2.5px; color: var(--ink); }
+.display-md { font-size: 40px; font-weight: 500; line-height: 1.1; letter-spacing: -1px; color: var(--ink); }
+.display-sm { font-size: 32px; font-weight: 500; line-height: 1.15; letter-spacing: -0.5px; color: var(--ink); }
+.section-sub { margin-top: var(--sp-sm); color: var(--muted); font-size: 18px; }
+
+/* ---------- 按钮 ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 44px; padding: 12px 20px;
+  font-family: var(--font); font-size: 14px; font-weight: 600; line-height: 1;
+  border-radius: var(--rounded-md); border: 1px solid transparent;
+  cursor: pointer; white-space: nowrap;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
+.btn-secondary { background: var(--canvas); color: var(--ink); border-color: var(--hairline); }
+.btn-on-color { background: #fff; color: var(--ink); }
+.btn-text { background: none; color: var(--ink); height: auto; padding: 8px 12px; font-weight: 500; }
+
+/* ---------- 徽章 ---------- */
+.badge-pill {
+  display: inline-block; padding: 4px 12px;
+  background: var(--surface-card); color: var(--body-strong);
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  border-radius: var(--rounded-pill);
+}
+
+/* ---------- 顶部导航 ---------- */
+.top-nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--canvas);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav-inner { display: flex; align-items: center; height: 64px; gap: var(--sp-xl); }
+.logo { display: flex; align-items: center; gap: var(--sp-xs); font-weight: 600; color: var(--ink); }
+.logo:hover { text-decoration: none; }
+.logo-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: var(--rounded-sm);
+  background: var(--primary); color: var(--on-primary); font-weight: 600;
+}
+.nav-links { display: flex; gap: var(--sp-lg); margin-left: var(--sp-lg); }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--body-strong); }
+.nav-actions { margin-left: auto; display: flex; align-items: center; gap: var(--sp-xs); }
+.nav-burger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; }
+.nav-mobile { display: none; flex-direction: column; padding: var(--sp-md) var(--sp-lg); gap: var(--sp-md); border-top: 1px solid var(--hairline); }
+.nav-mobile.open { display: flex; }
+
+/* ---------- Hero ---------- */
+.hero { padding: var(--sp-section) 0; }
+.hero-grid { display: grid; grid-template-columns: 7fr 5fr; gap: var(--sp-xxl); align-items: center; }
+.hero-copy h1 { margin: var(--sp-md) 0 var(--sp-lg); }
+.hero-sub { font-size: 18px; color: var(--body-strong); max-width: 480px; }
+.hero-actions { display: flex; gap: var(--sp-sm); margin-top: var(--sp-xl); }
+.hero-stats { display: flex; gap: var(--sp-xxl); margin-top: var(--sp-xxl); }
+.hero-stats dt { font-size: 32px; font-weight: 500; letter-spacing: -0.5px; color: var(--ink); }
+.hero-stats dd { font-size: 13px; color: var(--muted); }
+
+/* Hero 右侧插图卡：surface-soft + 24px 圆角 */
+.hero-illustration-card {
+  background: var(--surface-soft);
+  border-radius: var(--rounded-xl);
+  height: 420px;
+  overflow: hidden;
+}
+
+/* 纯 CSS 黏土风山峦插画（占位，后续可替换为 3D 渲染图） */
+.clay-scene { position: relative; width: 100%; height: 100%; }
+.clay-sun {
+  position: absolute; top: 48px; right: 64px;
+  width: 88px; height: 88px; border-radius: 50%;
+  background: var(--brand-ochre);
+}
+.clay-mountain { position: absolute; bottom: 64px; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.clay-mountain.m1 { left: -40px; width: 260px; height: 200px; background: var(--brand-lavender); }
+.clay-mountain.m2 { left: 140px; width: 300px; height: 260px; background: var(--brand-teal); }
+.clay-mountain.m3 { right: -60px; width: 240px; height: 170px; background: var(--brand-peach); }
+.clay-ground { position: absolute; bottom: 0; width: 100%; height: 64px; background: var(--brand-mint); }
+
+/* ---------- 通用区块 ---------- */
+.section { padding: var(--sp-section) 0 0; }
+
+/* ---------- 搜索 + 分类工具栏 ---------- */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-md); margin: var(--sp-xl) 0; }
+.text-input {
+  flex: 1 1 320px; height: 44px; padding: 12px 16px;
+  background: var(--canvas); color: var(--ink);
+  font-family: var(--font); font-size: 16px;
+  border: 1px solid var(--hairline); border-radius: var(--rounded-md);
+  outline: none;
+}
+.text-input:focus { border-color: var(--ink); }
+.tabs { display: flex; flex-wrap: wrap; gap: var(--sp-xs); }
+.category-tab {
+  padding: 8px 16px; border: none; border-radius: var(--rounded-pill);
+  background: transparent; color: var(--muted);
+  font-family: var(--font); font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.category-tab.active { background: var(--surface-card); color: var(--ink); }
+
+/* ---------- 工具卡片网格（3/2/1 列） ---------- */
+.tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg); }
+.tool-card {
+  display: flex; flex-direction: column; gap: var(--sp-sm);
+  padding: var(--sp-lg);
+  background: var(--canvas);
+  border: 1px solid var(--hairline); border-radius: var(--rounded-lg);
+}
+.tool-head { display: flex; align-items: center; gap: var(--sp-sm); }
+.tool-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: var(--rounded-md);
+  font-size: 20px; flex-shrink: 0;
+}
+.tool-name { font-size: 18px; font-weight: 600; color: var(--ink); }
+.tool-desc { font-size: 14px; color: var(--body); flex: 1; }
+.tool-tags { display: flex; flex-wrap: wrap; gap: var(--sp-xs); }
+.tool-tag {
+  padding: 2px 10px; font-size: 13px; font-weight: 500;
+  background: var(--surface-card); color: var(--body-strong);
+  border-radius: var(--rounded-pill);
+}
+.tool-foot { display: flex; align-items: center; justify-content: space-between; margin-top: var(--sp-xs); }
+.tool-stars { font-size: 13px; color: var(--muted-soft); }
+.tool-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.empty-state { padding: var(--sp-xxl) 0; text-align: center; color: var(--muted); }
+
+/* ---------- 精选：6 色饱和 feature 卡片 ---------- */
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg); margin-top: var(--sp-xl); }
+.feature-card {
+  display: flex; flex-direction: column; gap: var(--sp-md);
+  padding: var(--sp-xl); border-radius: var(--rounded-xl); min-height: 260px;
+}
+.feature-card h3 { font-size: 18px; font-weight: 600; }
+.feature-card p { font-size: 14px; flex: 1; }
+.feature-card .feature-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+/* 深底白字：pink / teal；浅底深字：lavender / peach / ochre / cream */
+.feature-card.f-pink     { background: var(--brand-pink);     color: var(--on-primary); }
+.feature-card.f-teal     { background: var(--brand-teal);     color: var(--on-primary); }
+.feature-card.f-lavender { background: var(--brand-lavender); color: var(--ink); }
+.feature-card.f-peach    { background: var(--brand-peach);    color: var(--ink); }
+.feature-card.f-ochre    { background: var(--brand-ochre);    color: var(--ink); }
+.feature-card.f-cream    { background: var(--surface-card);   color: var(--ink); }
+.feature-card.f-pink h3, .feature-card.f-teal h3 { color: var(--on-primary); }
+.feature-card.f-lavender h3, .feature-card.f-peach h3,
+.feature-card.f-ochre h3, .feature-card.f-cream h3 { color: var(--ink); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: var(--surface-soft);
+  border-radius: var(--rounded-xl);
+  padding: 80px var(--sp-xxl);
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-md);
+}
+.cta-band p { color: var(--body-strong); }
+
+/* ---------- Footer（奶油色，非深色） ---------- */
+.footer { margin-top: var(--sp-section); background: var(--surface-soft); padding: 80px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp-xxl); }
+.footer-tag { margin-top: var(--sp-md); font-size: 14px; color: var(--muted); }
+.footer-col h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: var(--sp-md); }
+.footer-col a { display: block; font-size: 14px; color: var(--body); margin-bottom: var(--sp-xs); }
+/* 页脚山峦：Clay 签名元素 */
+.footer-mountains {
+  margin-top: 80px; height: 120px;
+  background:
+    radial-gradient(circle at 15% 130%, var(--brand-lavender) 90px, transparent 91px),
+    radial-gradient(circle at 45% 150%, var(--brand-mint) 120px, transparent 121px),
+    radial-gradient(circle at 75% 140%, var(--brand-peach) 100px, transparent 101px),
+    radial-gradient(circle at 95% 160%, var(--brand-ochre) 110px, transparent 111px);
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1024px) {
+  .tool-grid, .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .display-xl { font-size: 36px; letter-spacing: -1px; }
+  .display-md { font-size: 30px; }
+  .nav-links, .nav-actions { display: none; }
+  .nav-burger { display: block; margin-left: auto; }
+  .hero { padding: var(--sp-xxl) 0; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-illustration-card { height: 280px; }
+  .hero-stats { gap: var(--sp-lg); }
+  .section { padding-top: 64px; }
+  .tool-grid, .feature-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-lg); }
+  .cta-band { padding: var(--sp-xxl) var(--sp-lg); }
+}

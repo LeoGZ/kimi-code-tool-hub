@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kimi Code Tool Hub — 发现 Kimi Code 工具</title>
+  <meta name="description" content="像 Docker Hub 一样浏览和搜索 Kimi Code 生态的工具、插件与技能，一键跳转 GitHub。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 顶部导航：64px，奶油底 -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#">
+        <span class="logo-mark">K</span>
+        <span class="logo-word">Kimi Code Tool Hub</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#tools">工具</a>
+        <a href="#featured">精选</a>
+        <a href="#submit">提交工具</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-text" href="https://github.com/MoonshotAI" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-primary" href="#submit">提交工具</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="菜单">☰</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#tools">工具</a>
+      <a href="#featured">精选</a>
+      <a href="#submit">提交工具</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero：7/5 栅格，左文案右插图卡 -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="badge-pill">KIMI CODE ECOSYSTEM</span>
+          <h1 class="display-xl">发现每一个<br>Kimi Code 工具</h1>
+          <p class="hero-sub">
+            像 Docker Hub 一样浏览 Kimi Code 生态：插件、技能、MCP 服务与 CLI 扩展，
+            搜索、筛选、一键直达 GitHub 仓库。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#tools">浏览全部工具</a>
+            <a class="btn btn-secondary" href="#submit">提交你的工具</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt id="statTools">–</dt><dd>收录工具</dd></div>
+            <div><dt id="statCategories">–</dt><dd>分类</dd></div>
+            <div><dt id="statStars">–</dt><dd>GitHub Stars</dd></div>
+          </dl>
+        </div>
+        <div class="hero-illustration-card">
+          <!-- 占位插画：纯 CSS 黏土风山峦 -->
+          <div class="clay-scene">
+            <div class="clay-sun"></div>
+            <div class="clay-mountain m1"></div>
+            <div class="clay-mountain m2"></div>
+            <div class="clay-mountain m3"></div>
+            <div class="clay-ground"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 工具浏览区：搜索 + 分类 pill + 卡片网格 -->
+    <section class="section" id="tools">
+      <div class="container">
+        <h2 class="display-md">浏览工具</h2>
+        <p class="section-sub">搜索名称、描述或标签，按分类筛选。</p>
+
+        <div class="toolbar">
+          <input
+            class="text-input"
+            id="searchInput"
+            type="search"
+            placeholder="搜索工具，例如：skill、MCP、plugin…"
+            aria-label="搜索工具">
+          <div class="tabs" id="categoryTabs" role="tablist"></div>
+        </div>
+
+        <div class="tool-grid" id="toolGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>没有匹配的工具，换个关键词试试。</p>
+      </div>
+    </section>
+
+    <!-- 精选 band：6 色饱和卡片循环（数据同源于 tools.js 的 featured 标记） -->
+    <section class="section" id="featured">
+      <div class="container">
+        <h2 class="display-md">本周精选</h2>
+        <p class="section-sub">社区最活跃的 Kimi Code 工具。</p>
+        <div class="feature-grid" id="featureGrid"></div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="section" id="submit">
+      <div class="container">
+        <div class="cta-band">
+          <h2 class="display-sm">做了个好用的 Kimi Code 工具？</h2>
+          <p>提交 GitHub 仓库链接，审核通过后即可在 Tool Hub 上架展示。</p>
+          <a class="btn btn-primary" href="https://github.com/MoonshotAI" target="_blank" rel="noopener">前往 GitHub 提交</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 奶油色 footer（不用深色） -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">
+          <span class="logo-mark">K</span>
+          <span class="logo-word">Tool Hub</span>
+        </a>
+        <p class="footer-tag">Kimi Code 生态工具集散地。</p>
+      </div>
+      <div class="footer-col">
+        <h3>浏览</h3>
+        <a href="#tools">全部工具</a>
+        <a href="#featured">本周精选</a>
+      </div>
+      <div class="footer-col">
+        <h3>社区</h3>
+        <a href="https://github.com/MoonshotAI" target="_blank" rel="noopener">GitHub</a>
+        <a href="#submit">提交工具</a>
+      </div>
+      <div class="footer-col">
+        <h3>关于</h3>
+        <a href="#">Kimi Code</a>
+        <a href="#">使用条款</a>
+      </div>
+    </div>
+    <div class="footer-mountains" aria-hidden="true"></div>
+  </footer>
+
+  <script src="tools.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
