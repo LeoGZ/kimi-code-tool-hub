@@ -67,7 +67,7 @@ a:hover { text-decoration: underline; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--sp-lg); }
 
 /* ---------- 字体层级（Plain Black 缺席，用 Inter 500 + 负字距替代） ---------- */
-.display-xl { font-size: 72px; font-weight: 500; line-height: 1.0; letter-spacing: -2.5px; color: var(--ink); }
+.display-xl { font-size: 56px; font-weight: 500; line-height: 1.05; letter-spacing: -2px; color: var(--ink); }
 .display-md { font-size: 40px; font-weight: 500; line-height: 1.1; letter-spacing: -1px; color: var(--ink); }
 .display-sm { font-size: 32px; font-weight: 500; line-height: 1.15; letter-spacing: -0.5px; color: var(--ink); }
 .section-sub { margin-top: var(--sp-sm); color: var(--muted); font-size: 18px; }
@@ -116,38 +116,38 @@ a:hover { text-decoration: underline; }
 .nav-mobile.open { display: flex; }
 
 /* ---------- Hero ---------- */
-.hero { padding: var(--sp-section) 0; }
+.hero { padding: var(--sp-xxl) 0; }
 .hero-grid { display: grid; grid-template-columns: 7fr 5fr; gap: var(--sp-xxl); align-items: center; }
-.hero-copy h1 { margin: var(--sp-md) 0 var(--sp-lg); }
-.hero-sub { font-size: 18px; color: var(--body-strong); max-width: 480px; }
-.hero-actions { display: flex; gap: var(--sp-sm); margin-top: var(--sp-xl); }
-.hero-stats { display: flex; gap: var(--sp-xxl); margin-top: var(--sp-xxl); }
-.hero-stats dt { font-size: 32px; font-weight: 500; letter-spacing: -0.5px; color: var(--ink); }
+.hero-copy h1 { margin: var(--sp-sm) 0 var(--sp-md); }
+.hero-sub { font-size: 16px; color: var(--body-strong); max-width: 480px; }
+.hero-actions { display: flex; gap: var(--sp-sm); margin-top: var(--sp-lg); }
+.hero-stats { display: flex; gap: var(--sp-xl); margin-top: var(--sp-xl); }
+.hero-stats dt { font-size: 24px; font-weight: 500; letter-spacing: -0.5px; color: var(--ink); }
 .hero-stats dd { font-size: 13px; color: var(--muted); }
 
 /* Hero 右侧插图卡：surface-soft + 24px 圆角 */
 .hero-illustration-card {
   background: var(--surface-soft);
   border-radius: var(--rounded-xl);
-  height: 420px;
+  height: 300px;
   overflow: hidden;
 }
 
 /* 纯 CSS 黏土风山峦插画（占位，后续可替换为 3D 渲染图） */
 .clay-scene { position: relative; width: 100%; height: 100%; }
 .clay-sun {
-  position: absolute; top: 48px; right: 64px;
-  width: 88px; height: 88px; border-radius: 50%;
+  position: absolute; top: 36px; right: 48px;
+  width: 64px; height: 64px; border-radius: 50%;
   background: var(--brand-ochre);
 }
-.clay-mountain { position: absolute; bottom: 64px; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
-.clay-mountain.m1 { left: -40px; width: 260px; height: 200px; background: var(--brand-lavender); }
-.clay-mountain.m2 { left: 140px; width: 300px; height: 260px; background: var(--brand-teal); }
-.clay-mountain.m3 { right: -60px; width: 240px; height: 170px; background: var(--brand-peach); }
-.clay-ground { position: absolute; bottom: 0; width: 100%; height: 64px; background: var(--brand-mint); }
+.clay-mountain { position: absolute; bottom: 48px; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.clay-mountain.m1 { left: -40px; width: 200px; height: 150px; background: var(--brand-lavender); }
+.clay-mountain.m2 { left: 110px; width: 240px; height: 195px; background: var(--brand-teal); }
+.clay-mountain.m3 { right: -60px; width: 190px; height: 130px; background: var(--brand-peach); }
+.clay-ground { position: absolute; bottom: 0; width: 100%; height: 48px; background: var(--brand-mint); }
 
 /* ---------- 通用区块 ---------- */
-.section { padding: var(--sp-section) 0 0; }
+.section { padding: 64px 0 0; }
 
 /* ---------- 搜索 + 分类工具栏 ---------- */
 .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-md); margin: var(--sp-xl) 0; }
